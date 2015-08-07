@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+    .container
+        .page-header
+            h1= title
+            br
+            -if(error)
+                .alert.alert-danger( style='max-width: 500px;') !{error}
+            -if(success)
+                .alert.alert-success( style='max-width: 500px;') !{success}
+            form.form-signin(action='/connection/add', method='post', id='login', role='form', style='max-width: 500px;')
+                .form-group
+                    label.sr-only(for='hostname') Hostname
+                    input.form-control(type='text', name='hostname', placeholder='Hostname', required=true)
+                 .form-group
+                    label.sr-only(for='port') Port
+                    input.form-control(type='text', name='port', placeholder='Port', value='27017')
+                .form-group
+                    label.sr-only(for='defaultdb') Default Database
+                    input.form-control(type='text', name='defaultdb', placeholder='Default Database')
+                .form-group
+                    a(data-toggle='collapse', data-target='#auth') Authentication Parameters
+                #auth.collapse
+                    .form-group
+                        label.sr-only(for='username') Username
+                        input.form-control(type='text', name='username', placeholder='Username')
+                    .form-group
+                        label.sr-only(for='password') Password
+                        input.form-control(type='password', name='password', placeholder='Password')
+                    .form-group
+                        label.sr-only(for='authdb') Authentication Database
+                        input.form-control(type='text', name='authdb', placeholder='Authentication Database')
+
+                button.btn.btn-lg.btn-primary.btn-block(type='submit') Connect

@@ -14,6 +14,9 @@
     "express": "~4.12.2",
     "express-session": "^1.0.2",
     "express-validator": "~2.13.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-bootlint":"~0.12.0",
     "jade": "~1.9.2",
     "mocha": "^2.2.5",
     "mongodb": "*",
@@ -25,8 +28,7 @@
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.2.0",
     "should": "^7.0.2",
-    "grunt-mocha-test": "^0.12.7",
-    "grunt-contrib-jshint": "^0.11.2"
+    "sqlite3": "^3.0.9"
   },
   "devDependencies": {
     "chai": "^3.2.0",
